@@ -9,10 +9,10 @@ test:
 	# --cov specify the root folder for 
 
 format:
-	black *.py src/*.py test/*.py
+	black src/*.py test/*.py
 
 lint:
-	pylint --disable=R,C *.py
+	pylint --disable=R,C src/*.py test/*.py
 
 refactor: format lint
 
