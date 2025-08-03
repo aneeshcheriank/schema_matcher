@@ -1,10 +1,12 @@
 from sentence_transformers import SentenceTransformer
 import pandas as pd
+import os
 
 from src.encoder import encoder
 from src.matcher import search
+import src.config as config
 
-data_path = "./data/train.csv"
+data_path = os.path.join(config.DATA_FOLDER, "train.csv")
 model_path = "./models/output/sbert-finetuned-model"
 
 if __name__ == "__main__":
