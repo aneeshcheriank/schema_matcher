@@ -1,8 +1,9 @@
-pytest==8.3.3
+﻿pytest
 pytest-cov
-pylint==3.3.1
-black==24.10.0
-ipython==8.27.0
+pylint
+black
 sentence-transformers
 pandas
 torch
+scikit-learn
+faiss-cpu
