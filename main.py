@@ -1,6 +1,6 @@
 from sentence_transformers import SentenceTransformer
 import pandas as pd
-import os
+import json
 
 from src.encoder import encoder
 from src.matcher import search
@@ -26,6 +26,18 @@ if __name__ == "__main__":
         question2_embeddings, 
         k=5
     )
+    
+    similar_question_dict = dict()
+    for q in question1:
+        for dis, idx in zip(distances[i], indices[i]):
+            sim_questions = []
+            if dis > 0.75:
+                sim_questions.append(
+                    (question2[idx], {'similarity': dis}))
+            else:
+                break 
+        similar_question_dict[q] = sim_questions
 
-
+    with open("./output/similar_questions.json", "w") as f:
+        json.dump(similar_question_dict, f, indent=4)
 
