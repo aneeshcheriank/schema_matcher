@@ -16,10 +16,11 @@ def calculate_similarity(model, sentence_1, sentence_2):
     similarity_scores = vector_similarity(encoded_1, encoded_2)
     return similarity_scores.tolist()
 
+
 def search(encoded1, encoded2, k=5):
     norlalize_L2(encoded1)
     norlalize_L2(encoded2)
-    
+
     index = IndexFlatIP(encoded1.shape[1])
     index.add(encoded1.cpu().numpy())
     distances, indices = index.search(encoded2.cpu().numpy(), k)
