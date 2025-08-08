@@ -2,8 +2,11 @@
 pytest-cov
 pylint
 black
-sentence-transformers
-pandas
+
+sentence-transformers==5.0.0
+datasets==4.0.0
+accelerate==1.9.0
+pandas==2.2.2
 torch
-scikit-learn
+scikit-learn==1.6.1
 faiss-cpu
